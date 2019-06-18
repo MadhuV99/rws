@@ -1,8 +1,8 @@
 ---
-title: "R Notebook" 
+title: "R Workshop Notebook" 
 output: html_notebook
 ---
-url: https://ariel.rbind.io/
+[Workshop url](https://ariel.rbind.io/workshop/rmarkdown/)
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
