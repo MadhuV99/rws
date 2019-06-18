@@ -90,6 +90,25 @@ And $\int_{a}^b f(x)dx$
 Here is how we sum everything together: $$\sum_{i=1}^n X_i$$ 
 And \[ \int_a^b f(x)\,dx.\] 
 
+## Page breaks
+Force new pages by putting three or more dashes or asterisks on a line.
+****
+
+
+----
+
+
+
+# Miscellaneous
+## Superscripts
+y^2^
+
+## Subscripts
+H~2~O 
+
+## Strikethroughs
+~~Strike this out~~ 
+
 
 
 
