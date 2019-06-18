@@ -1,6 +1,13 @@
 ---
 title: "R Workshop Notebook" 
-output: html_notebook
+date: June 18, 2019
+author: Madhu Vasudevan
+output:
+  html_notebook:
+    toc: TRUE
+    toc_depth: 3
+    toc_float: TRUE
+    fig_caption: FALSE
 ---
 [Workshop url](https://ariel.rbind.io/workshop/rmarkdown/)
 
@@ -69,15 +76,15 @@ There were `r nrow(mtcars)` rows in the dataset.
 ## Plain code blocks
 Write in *italics* with single asterisks.
 ```
-
-## Inline equations
+## Equations
+### Inline equations
 Lookup symbols at Math-Linux.com [website](https://math-linux.com/latex-26/faq/latex-faq/article/how-to-write-latex-derivatives-limits-sums-products-and-integrals) 
 
 Also:
 Getting Started with LaTeX
 By David R. Wilkins
 2nd Edition
-Copyright David R. Wilkins 1995 [online]https://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/()
+Copyright David R. Wilkins 1995 [online](https://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/)
 
 Also:
 LaTex [wiki](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
@@ -86,7 +93,7 @@ Let's talk about $\sigma^2$ within a sentence, using the Greek letter.
 
 And $\int_{a}^b f(x)dx$
 
-## Display equation
+### Display equation
 Here is how we sum everything together: $$\sum_{i=1}^n X_i$$ 
 And \[ \int_a^b f(x)\,dx.\] 
 
@@ -109,10 +116,74 @@ H~2~O
 ## Strikethroughs
 ~~Strike this out~~ 
 
+# YAML header
+Refer:  
+[RStudio HTML R Markdown page](http://rmarkdown.rstudio.com/html_document_format.html#overview)  
+[PDF R Markdown page](http://rmarkdown.rstudio.com/pdf_document_format.html#overview)  
+
+``` 
+---
+title: "Practice Notebook"
+date: May 16, 2018
+output: html_notebook
+--- 
+``` 
+
+# Code Chunks
+```{r}
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+detach("package:dplyr", unload = TRUE)
+detach("package:ggplot2", unload = TRUE)
+```
+
+## Knitr Options
+Author [ Yihui Xie](https://yihui.name/knitr/options/) 
+
+## Making a setup chunk
+code it as follows within a code chunk delimiters - three backticks (`):
+
+{r setup, echo = FALSE}  
+library(knitr)  
+opts_chunk$set(root.dir = "filepath", fig.height = 10, fig.width = 5)  
 
 
+## Suppressing messages and warnings
+```{r, message = FALSE}
+library(ggplot2)
+library(dplyr)
+```
 
+## Suppressing code output
+```{r, eval=FALSE}
+mtcars %>%
+group_by(cyl) %>%
+summarise(mdisp = mean(disp) )
+```
 
+## Suppressing code
+```{r, echo = FALSE}
+qplot(wt, mpg, data = mtcars)
+```
+
+```{r, fig.height = 10, fig.width = 5}
+plot(cars)
+```
+
+## Default working directory
+For R Notebooks and all other R Markdown documents, default working directory is the directory where the Rmd file is stored.
+
+```{r, eval=FALSE, echo=FALSE}
+getwd()
+```
+
+```{r}
+dat = read.csv("./Data/test.csv")
+dat
+```
 
 
 
