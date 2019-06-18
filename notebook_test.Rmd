@@ -1,13 +1,25 @@
 ---
-title: "R Workshop Notebook" 
-date: June 18, 2019
-author: Madhu Vasudevan
+title: "R Workshop Notebook"
+author: "Madhu Vasudevan"
+date: "June 18, 2019"
 output:
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_depth: '3'
+  word_document:
+    toc: yes
+    toc_depth: '3'
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
   html_notebook:
-    toc: TRUE
+    fig_caption: no
+    toc: yes
     toc_depth: 3
-    toc_float: TRUE
-    fig_caption: FALSE
+    toc_float: yes
+always_allow_html: yes
+urlcolor: blue
 ---
 [Workshop url](https://ariel.rbind.io/workshop/rmarkdown/)
 
@@ -208,6 +220,42 @@ library(dygraphs)
 dygraph(nhtemp) %>%
 dyRangeSelector( dateWindow = c("1920-01-01", "1960-01-01") )
 ```
+
+## Change how static images are added
+For pinning down figure location in pdf documents.
+
+```{r, echo = FALSE, out.width = "100%"}
+knitr::include_graphics('RStudio-Logo-Blue-Gradient.png')
+```
+
+## Holding figures to end of chunk with fig.show
+Does NOT work with notebooks.
+
+```{r}
+plot(cars)
+plot(pressure)
+```
+
+```{r, fig.show = "hold"}
+plot(cars)
+plot(pressure)
+```
+
+# Informational links
+## Package tinytex   
+https://yihui.name/tinytex/  
+
+## RStudio cheatsheet   
+https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf  
+
+## Markdown basics  
+http://rmarkdown.rstudio.com/authoring_basics.html  
+
+## LaTeX mathematical symbols  
+https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols  
+
+## Formatting HTML documents   
+http://rmarkdown.rstudio.com/html_document_format.html#overview  
 
 ----    End of Document   
 

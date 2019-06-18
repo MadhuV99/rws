@@ -1,0 +1,107 @@
+---
+title: "R Markdown Workshop"
+author: "Madhu V"
+date: "6/18/2019"
+output:
+  pdf_document:
+    toc: yes
+  word_document:
+    toc: yes
+  html_document:
+    df_print: paged
+    toc: yes
+geometry: margin=.5in, bottom=.75in
+always_allow_html: yes
+urlcolor: blue
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Removing pound signs from code output via setup chunk
+Include comment = NA in the setup chunk to get rid of these.
+
+## Add table of contents
+With toc: TRUE in YAML header.
+
+##Change the document margins
+via geometry: setting in the YAML header,   
+setting the margins overall or just some of the margins
+
+## Make URL links visible
+change the url color using the urlcolor: option in the YAML header
+
+## Using eval and echo
+
+```{r, message = FALSE}
+library(dplyr)
+```
+
+```{r, eval = FALSE}
+mtcars %>%
+group_by(cyl) %>%
+summarise(mdisp = mean(disp) )
+```
+
+```{r, echo = FALSE}
+knitr::kable(mtcars %>%
+group_by(cyl) %>%
+summarise(mdisp = mean(disp) ) )
+```
+
+## Holding figures to end of chunk with fig.show
+
+```{r, twoplots1}
+plot(cars)
+plot(pressure)
+```
+
+```{r twoplots2, fig.show = "hold", fig.width = 4}
+plot(cars)
+plot(pressure)
+```
+
+# Informational links
+## Package tinytex   
+https://yihui.name/tinytex/  
+
+## RStudio cheatsheet   
+https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf  
+
+## Markdown basics  
+http://rmarkdown.rstudio.com/authoring_basics.html  
+
+## LaTeX mathematical symbols  
+https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols  
+
+## Formatting HTML documents   
+http://rmarkdown.rstudio.com/html_document_format.html#overview  
+
+----    End of Document   
+
+
+
+
+
+
