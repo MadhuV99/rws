@@ -23,3 +23,100 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 ## Headers
 The [RStudio cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is agood resource, 
 as is RStudio’s [Markdown Basics page](http://rmarkdown.rstudio.com/authoring_basics.html).
+
+**Bold text** looks like **this**.
+
+*Italic* text looks like *this*.
+
+## Nested Bullete List
+
+* First bullet
+* Second bullet
+    + Secondary bullet
+
+Do you see the nested bullet list above?
+
+## Nested Numbered Lists
+1. Item 1
+2. Item 2
+    a. Item 2a
+    b. Item 2b
+3. Item 3
+
+## Blockquotes
+> Here is how to write a block quote 
+as a single block of text even if it is written 
+on multiple lines
+
+> Here is the first block quote  
+> Here is the second  
+> end each above line with two or more spaces.
+
+> Here is the first block quote.
+
+> Here is the second after a line break.
+
+## Images
+![RStudio-logo](RStudio-Logo-Blue-Gradient.png) 
+
+## Inline R code
+
+There were `r nrow(mtcars)` rows in the dataset.
+
+## Plain code blocks
+
+```
+## Plain code blocks
+Write in *italics* with single asterisks.
+```
+
+## Inline equations
+Lookup symbols at Math-Linux.com [website](https://math-linux.com/latex-26/faq/latex-faq/article/how-to-write-latex-derivatives-limits-sums-products-and-integrals) 
+
+Also:
+Getting Started with LaTeX
+By David R. Wilkins
+2nd Edition
+Copyright David R. Wilkins 1995 [online]https://www.maths.tcd.ie/~dwilkins/LaTeXPrimer/()
+
+Also:
+LaTex [wiki](https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols)
+
+Let's talk about $\sigma^2$ within a sentence, using the Greek letter.
+
+And $\int_{a}^b f(x)dx$
+
+## Display equation
+Here is how we sum everything together: $$\sum_{i=1}^n X_i$$ 
+And \[ \int_a^b f(x)\,dx.\] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
