@@ -28,14 +28,14 @@ The preview shows you a rendered HTML copy of the contents of the editor. Conseq
 # Introduction to Markdown
 
 ## Headers
-The [RStudio cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is agood resource, 
+The [RStudio cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is a good resource, 
 as is RStudio’s [Markdown Basics page](http://rmarkdown.rstudio.com/authoring_basics.html).
 
 **Bold text** looks like **this**.
 
 *Italic* text looks like *this*.
 
-## Nested Bullete List
+## Nested Bullet List
 
 * First bullet
 * Second bullet
@@ -50,7 +50,7 @@ Do you see the nested bullet list above?
     b. Item 2b
 3. Item 3
 
-## Blockquotes
+## Block quotes
 > Here is how to write a block quote 
 as a single block of text even if it is written 
 on multiple lines
@@ -78,7 +78,7 @@ Write in *italics* with single asterisks.
 ```
 ## Equations
 ### Inline equations
-Lookup symbols at Math-Linux.com [website](https://math-linux.com/latex-26/faq/latex-faq/article/how-to-write-latex-derivatives-limits-sums-products-and-integrals) 
+Look up symbols at Math-Linux.com [website](https://math-linux.com/latex-26/faq/latex-faq/article/how-to-write-latex-derivatives-limits-sums-products-and-integrals) 
 
 Also:
 Getting Started with LaTeX
@@ -103,7 +103,6 @@ Force new pages by putting three or more dashes or asterisks on a line.
 
 
 ----
-
 
 
 # Miscellaneous
@@ -144,7 +143,7 @@ detach("package:ggplot2", unload = TRUE)
 Author [ Yihui Xie](https://yihui.name/knitr/options/) 
 
 ## Making a setup chunk
-code it as follows within a code chunk delimiters - three backticks (`):
+code it as follows within a code chunk delimiters - three back-ticks (`):
 
 {r setup, echo = FALSE}  
 library(knitr)  
@@ -185,28 +184,30 @@ dat = read.csv("./Data/test.csv")
 dat
 ```
 
+## Separating single code chunks into multiples
+
+```{r}
+qplot(disp, mpg, data = mtcars)
+qplot(wt, mpg, data = mtcars)
+```
 
 
+```{r}
+qplot(disp, mpg, data = mtcars)
+```
 
 
+```{r}
+qplot(wt, mpg, data = mtcars)
+```
 
 
+## Embedding interactive graphics
+```{r}
+library(dygraphs)
+dygraph(nhtemp) %>%
+dyRangeSelector( dateWindow = c("1920-01-01", "1960-01-01") )
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+----    End of Document   
 
